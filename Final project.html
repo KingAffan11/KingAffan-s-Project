@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MY CALCULATOR</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQU0DhQ-Tx65Dk_erLjZie1s9A-1yUGqOSAhA&usqp=CAU">
+    <style>
+        body{
+            background-image: url("https://wallpaperaccess.com/full/1164964.jpg");
+            background-size: cover;
+        }
+        #a{
+            height: 100px;
+            width: 150px;
+            background-color: rgba(0,0,0,0.6);
+            color: wheat;
+            font-size: 30px;
+            border: none;
+        }
+        #b{
+            height: 100px;
+            width: 150px;
+            background-color: rgba(9, 9, 156,0.6);
+            color: gold;
+            font-size: 30px;
+            border: none;
+        }
+        #c{
+            height: 100px;
+            width: 150px;
+            background-color: rgba(107, 4, 25,0.6);
+            color: whitesmoke;
+            font-size: 40px;
+            border: none;
+        }
+        #a:hover{
+            background-color: rgba(0,0,0,0.8);
+            border: 1px solid white;
+            cursor: pointer;
+        }
+        #b:hover{
+            background-color: rgba(9, 9, 156,0.8);
+            border: 1px solid white;
+            cursor: pointer;
+        }
+        #c:hover{
+            background-color: rgba(107, 4, 25,0.8);
+            border: 1px solid white;
+            cursor: pointer;
+        }
+        #myinput{
+            height: 100px;
+            width: 605px;
+            background-color: rgba(38, 224, 224,0.8);
+            font-size: 55px;
+            text-align: right;
+        }
+        h1{
+            font-size: 60px;
+            font-family: cursive;
+            color: gold;
+            text-align: center;
+            background-color: rgba(3, 3, 117,0.5);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <h1>CALCULATE YOUR<br> EXPRESSION</h1>
+            </td>
+            <td>
+                <form name="myform">
+                    <input type="text" name="myinput" id="myinput" placeholder="0">
+                </form>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="button" value="7" id="a" onclick="takeValue(7)">
+                        </td>
+                        <td>
+                            <input type="button" value="8" id="a" onclick="takeValue(8)">
+                        </td>
+                        <td>
+                            <input type="button" value="9" id="a" onclick="takeValue(9)">
+                        </td>
+                        <td>
+                            <input type="button" value="x" id="b" onclick="takeValue('*')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="4" id="a" onclick="takeValue(4)">
+                        </td>
+                        <td>
+                            <input type="button" value="5" id="a" onclick="takeValue(5)">
+                        </td>
+                        <td>
+                            <input type="button" value="6" id="a" onclick="takeValue(6)">
+                        </td>
+                        <td>
+                            <input type="button" value="-" id="b" onclick="takeValue('-')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="1" id="a" onclick="takeValue(1)">
+                        </td>
+                        <td>
+                            <input type="button" value="2" id="a" onclick="takeValue(2)">
+                        </td>
+                        <td>
+                            <input type="button" value="3" id="a" onclick="takeValue(3)">
+                        </td>
+                        <td>
+                            <input type="button" value="+" id="b" onclick="takeValue('+')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="0" id="a" onclick="takeValue(0)">
+                        </td>
+                        <td>
+                            <input type="button" value="C" id="c" onclick="clearValue()">
+                        </td>
+                        <td>
+                            <input type="button" value="=" id="c" onclick="finalValue()">
+                        </td>
+                        <td>
+                            <input type="button" value="/" id="b" onclick="takeValue('/')">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function takeValue(num)
+          {
+             document.myform.myinput.value = document.myform.myinput.value+num;
+          }
+        function clearValue()
+          {
+            document.myform.myinput.value = "";
+          }
+        function finalValue()
+          {
+              var x = document.myform.myinput.value;
+              document.myform.myinput.value = eval(x);
+          }
+    </script>
+</body>
+</html>
